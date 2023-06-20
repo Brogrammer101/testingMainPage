@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            background-color: darkslategray;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .indent-1 {
+            padding-left: 350px;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+        }
+    </style>
+
+<main>
+    <section>
+        <h1 style="color: white" class="indent-1">Main Page</h1>
+    </section>
+</main>
+
+     <style>
+        h4 {
+            margin-top: 200px;
+        }
+     </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h4><a style="color: white" href="second-page.html">Second Page</a></h4></li>
+        </ul>
+    </nav>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var links = document.querySelectorAll("a");
+
+            links.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
+                    setTimeout(function() {
+                        window.location.href = link.href;
+                    }, 400);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
